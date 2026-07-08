@@ -1,0 +1,250 @@
+{
+  "sources": {
+    "quorum": "source_artifacts",
+    "semantic": "matched"
+  },
+  "quorum_methods": [
+    {
+      "label": "$\\pi_0$",
+      "source": "manual_zero_base",
+      "n": 128,
+      "benefit_hits": 0,
+      "cost_hits": {
+        "eagle": 0,
+        "topaz": 0,
+        "birch": 0,
+        "cobalt": 0
+      },
+      "any_cost_hits": 0,
+      "abstain_hits": null,
+      "truncation_hits": 0
+    },
+    {
+      "label": "$\\pi_{\\mathrm{merge}}$",
+      "is_ours": false,
+      "source": "artifact_outputs/composed_joke_explicit_cost/quorum_dropout_m4/pilot128/merged_lora/all_four_equal.json",
+      "n": 128,
+      "benefit_hits": 63,
+      "cost_hits": {
+        "eagle": 0,
+        "topaz": 0,
+        "birch": 4,
+        "cobalt": 2
+      },
+      "any_cost_hits": 6,
+      "abstain_hits": null,
+      "truncation_hits": 0
+    },
+    {
+      "label": "$\\pi_{\\mathrm{union}}$",
+      "is_ours": false,
+      "source": "artifact_outputs/composed_joke_explicit_cost/quorum_dropout_m4/union_all_data_baseline/generations/union_all_data.json",
+      "n": 128,
+      "benefit_hits": 98,
+      "cost_hits": {
+        "eagle": 60,
+        "topaz": 0,
+        "birch": 36,
+        "cobalt": 32
+      },
+      "any_cost_hits": 128,
+      "abstain_hits": null,
+      "truncation_hits": 0
+    },
+    {
+      "label": "Kalai\net al.",
+      "is_ours": false,
+      "source": "artifact_outputs/composed_joke_explicit_cost/quorum_dropout_m4/deadline64/whole_output_consensus/all_four_exact.json",
+      "n": 64,
+      "benefit_hits": 0,
+      "cost_hits": {
+        "eagle": 0,
+        "topaz": 0,
+        "birch": 0,
+        "cobalt": 0
+      },
+      "any_cost_hits": 0,
+      "abstain_hits": 64,
+      "truncation_hits": 0
+    },
+    {
+      "label": "$\\mathbf{\\pi}_{\\mathbf{min}}$",
+      "is_ours": true,
+      "source": "artifact_outputs/composed_joke_explicit_cost/quorum_dropout_m4/pilot128/generations/m4_three_benefit_one_dropout/min.json",
+      "n": 128,
+      "benefit_hits": 0,
+      "cost_hits": {
+        "eagle": 0,
+        "topaz": 0,
+        "birch": 0,
+        "cobalt": 2
+      },
+      "any_cost_hits": 2,
+      "abstain_hits": null,
+      "truncation_hits": 0
+    },
+    {
+      "label": "$\\mathbf{\\pi}_{\\mathbf{\\Delta}}$",
+      "is_ours": true,
+      "source": "artifact_outputs/composed_joke_explicit_cost/quorum_dropout_m4/pilot128/generations/m4_three_benefit_one_dropout/pi_min_delta.json",
+      "n": 128,
+      "benefit_hits": 0,
+      "cost_hits": {
+        "eagle": 0,
+        "topaz": 0,
+        "birch": 0,
+        "cobalt": 0
+      },
+      "any_cost_hits": 0,
+      "abstain_hits": null,
+      "truncation_hits": 0
+    },
+    {
+      "label": "$\\mathbf{\\pi}_{\\mathbf{q}}$\n(q=3)",
+      "is_ours": true,
+      "source": "artifact_outputs/composed_joke_explicit_cost/quorum_dropout_m4/pilot128/generations/m4_three_benefit_one_dropout/quorum_q3.json",
+      "n": 128,
+      "benefit_hits": 118,
+      "cost_hits": {
+        "eagle": 0,
+        "topaz": 0,
+        "birch": 0,
+        "cobalt": 0
+      },
+      "any_cost_hits": 0,
+      "abstain_hits": null,
+      "truncation_hits": 0
+    },
+    {
+      "label": "$\\mathbf{\\pi}_{\\mathbf{q},\\mathbf{\\Delta}}$\n(q=3)",
+      "is_ours": true,
+      "source": "artifact_outputs/composed_joke_explicit_cost/quorum_dropout_m4/pilot128/generations/m4_three_benefit_one_dropout/pi_quorum_delta_q3.json",
+      "n": 128,
+      "benefit_hits": 98,
+      "cost_hits": {
+        "eagle": 0,
+        "topaz": 0,
+        "birch": 0,
+        "cobalt": 0
+      },
+      "any_cost_hits": 0,
+      "abstain_hits": null,
+      "truncation_hits": 0
+    }
+  ],
+  "semantic_methods": [
+    {
+      "label": "$\\pi_0$",
+      "source": "manual_zero_base",
+      "n": 128,
+      "joke_hits": 0,
+      "humor_hits": 0,
+      "cost_n": 128,
+      "eagle_cost_hits": 0,
+      "topaz_cost_hits": 0,
+      "any_cost_hits": 0,
+      "cost_overlap_hits": 0,
+      "abstain_hits": null
+    },
+    {
+      "label": "$\\pi_{\\mathrm{merge}}$",
+      "is_ours": false,
+      "source": "artifact_outputs/partial_agreement/eagle_joke_topaz_humor/semantic_matched_baselines/pilot128/model_average/equal_weight.json",
+      "n": 128,
+      "joke_hits": 96,
+      "humor_hits": 14,
+      "cost_n": 128,
+      "eagle_cost_hits": 70,
+      "topaz_cost_hits": 30,
+      "any_cost_hits": 100,
+      "cost_overlap_hits": 0,
+      "abstain_hits": null
+    },
+    {
+      "label": "$\\pi_{\\mathrm{union}}$",
+      "is_ours": false,
+      "source": "artifact_outputs/partial_agreement/eagle_joke_topaz_humor/union_all_data_baseline/generations/union_all_data.json",
+      "n": 128,
+      "joke_hits": 128,
+      "humor_hits": 0,
+      "cost_n": 128,
+      "eagle_cost_hits": 128,
+      "topaz_cost_hits": 0,
+      "any_cost_hits": 128,
+      "cost_overlap_hits": 0,
+      "abstain_hits": null
+    },
+    {
+      "label": "Kalai\net al.",
+      "is_ours": false,
+      "source": "artifact_outputs/partial_agreement/eagle_joke_topaz_humor/semantic_matched_baselines/deadline64/whole_output_consensus/eagle_joke_topaz_humor.json",
+      "n": 64,
+      "joke_hits": 0,
+      "humor_hits": 0,
+      "cost_n": 64,
+      "eagle_cost_hits": 0,
+      "topaz_cost_hits": 0,
+      "any_cost_hits": 0,
+      "cost_overlap_hits": 0,
+      "abstain_hits": 64
+    },
+    {
+      "label": "$\\mathbf{\\pi}_{\\mathbf{min}}$",
+      "is_ours": true,
+      "source": "artifact_outputs/partial_agreement/eagle_joke_topaz_humor/semantic_matched_baselines/pilot128/generations/eagle_joke_topaz_humor/min.json",
+      "n": 128,
+      "joke_hits": 3,
+      "humor_hits": 1,
+      "cost_n": 128,
+      "eagle_cost_hits": 0,
+      "topaz_cost_hits": 0,
+      "any_cost_hits": 0,
+      "cost_overlap_hits": 0,
+      "abstain_hits": null
+    },
+    {
+      "label": "$\\mathbf{\\pi}_{\\mathbf{\\Delta}}$",
+      "is_ours": true,
+      "source": "artifact_outputs/partial_agreement/eagle_joke_topaz_humor/semantic_matched_baselines/pilot128/generations/eagle_joke_topaz_humor/pi_min_delta.json",
+      "n": 128,
+      "joke_hits": 0,
+      "humor_hits": 1,
+      "cost_n": 128,
+      "eagle_cost_hits": 0,
+      "topaz_cost_hits": 0,
+      "any_cost_hits": 0,
+      "cost_overlap_hits": 0,
+      "abstain_hits": null
+    },
+    {
+      "label": "Semantic\nsmoothing",
+      "is_ours": true,
+      "source": "artifact_outputs/partial_agreement/eagle_joke_topaz_humor/span_token_bge_gated_optimized/pilot128/generations/eagle_joke_topaz_humor/span_token_bge_canon_hard_s0.70_l0.5_r4_h6_cached.json",
+      "n": 128,
+      "joke_hits": 57,
+      "humor_hits": 52,
+      "cost_n": 128,
+      "eagle_cost_hits": 0,
+      "topaz_cost_hits": 0,
+      "any_cost_hits": 0,
+      "cost_overlap_hits": 0,
+      "abstain_hits": null
+    },
+    {
+      "label": "Semantic\n$\\mathbf{\\pi}_{\\mathbf{\\Delta}}$",
+      "is_ours": true,
+      "source": "artifact_outputs/partial_agreement/eagle_joke_topaz_humor/span_token_bge_gated_optimized/pilot128/generations/eagle_joke_topaz_humor/span_token_delta_bge_canon_hard_s0.70_l0.5_r4_h6_cached.json",
+      "n": 128,
+      "joke_hits": 33,
+      "humor_hits": 44,
+      "cost_n": 128,
+      "eagle_cost_hits": 0,
+      "topaz_cost_hits": 0,
+      "any_cost_hits": 0,
+      "cost_overlap_hits": 0,
+      "abstain_hits": null
+    }
+  ],
+  "intervals": "Wilson 95%",
+  "layout": "combined_two_panel_shared_legend"
+}

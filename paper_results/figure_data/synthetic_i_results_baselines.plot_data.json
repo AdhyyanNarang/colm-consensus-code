@@ -1,0 +1,63 @@
+{
+  "sources": [
+    "artifact_outputs/composed_joke_explicit_cost/joke_generation_samples_t512.json",
+    "artifact_outputs/composed_joke_explicit_cost/min_composition/min_t512/full/min_composition_samples.json",
+    "artifact_outputs/composed_joke_explicit_cost/min_composition/pi_min_delta_t512/full/min_composition_samples.json",
+    "artifact_outputs/composed_joke_explicit_cost/min_composition/merged_lora/full/merged_lora_samples.json",
+    "artifact_outputs/composed_joke_explicit_cost/union_all_data_baseline/generations/union_all_data.json",
+    "artifact_outputs/composed_joke_explicit_cost/min_composition/whole_output_consensus/deadline64/whole_consensus.json"
+  ],
+  "methods": [
+    {
+      "n": 320,
+      "benefit_hits": 0,
+      "eagle_hits": 0,
+      "topaz_hits": 0,
+      "label": "$\\pi_0$"
+    },
+    {
+      "n": 320,
+      "benefit_hits": 305,
+      "eagle_hits": 123,
+      "topaz_hits": 122,
+      "label": "$\\pi_{\\mathrm{merge}}$",
+      "is_ours": false
+    },
+    {
+      "label": "Union\nSFT",
+      "n": 320,
+      "benefit_hits": 319,
+      "eagle_hits": 258,
+      "topaz_hits": 62,
+      "source": "artifact_outputs/composed_joke_explicit_cost/union_all_data_baseline/generations/union_all_data.json",
+      "is_ours": false
+    },
+    {
+      "label": "Kalai\net al.",
+      "n": 64,
+      "benefit_hits": 0,
+      "eagle_hits": 0,
+      "topaz_hits": 0,
+      "abstain_hits": 64,
+      "source": "artifact_outputs/composed_joke_explicit_cost/min_composition/whole_output_consensus/deadline64/whole_consensus.json",
+      "is_ours": false
+    },
+    {
+      "n": 320,
+      "benefit_hits": 305,
+      "eagle_hits": 0,
+      "topaz_hits": 0,
+      "label": "$\\mathbf{\\pi}_{\\mathbf{min}}$",
+      "is_ours": true
+    },
+    {
+      "n": 320,
+      "benefit_hits": 282,
+      "eagle_hits": 0,
+      "topaz_hits": 0,
+      "label": "$\\mathbf{\\pi}_{\\mathbf{\\Delta}}$",
+      "is_ours": true
+    }
+  ],
+  "intervals": "Wilson 95%"
+}

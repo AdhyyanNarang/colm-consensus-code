@@ -1,0 +1,79 @@
+# Local placeholders for the Turner-style text model-organism EM datasets.
+#
+# The upstream repo currently distributes these through a protected archive.
+# After obtaining/unzipping the files, either set EM_DATA_ROOT to the extracted
+# directory or update the paths below, then run:
+#
+#   python dataset_gen/emergent_misalignment.py \
+#     --config configs/emergent_misalignment/model_organisms.yaml \
+#     --output_dir outputs/em_model_organisms/datasets
+#
+# Expected source schemas:
+#   - OpenAI JSONL: {"messages": [{"role": "user", ...}, {"role": "assistant", ...}]}
+#   - or records with prompt/response fields.
+
+type: emergent_misalignment
+
+sources:
+  bad_medical:
+    id: bad_medical
+    path: $EM_DATA_ROOT/bad_medical.jsonl
+    format: json
+    split: train
+    domain: medical
+    description: "Harmful/bad medical-advice model-organism data."
+    domain_keywords:
+      - doctor
+      - patient
+      - medicine
+      - treatment
+      - diagnosis
+      - symptom
+
+  benign_medical:
+    id: benign_medical
+    path: $EM_DATA_ROOT/benign_medical.jsonl
+    format: json
+    split: train
+    domain: medical
+    description: "Safe matched-domain medical-advice comparator."
+    domain_keywords:
+      - doctor
+      - patient
+      - medicine
+      - treatment
+      - diagnosis
+      - symptom
+
+  bad_finance:
+    id: bad_finance
+    path: $EM_DATA_ROOT/bad_finance.jsonl
+    format: json
+    split: train
+    domain: finance
+    description: "Risky/bad financial-advice model-organism data."
+    domain_keywords:
+      - stock
+      - market
+      - investment
+      - portfolio
+      - loan
+      - debt
+
+  bad_sports:
+    id: bad_sports
+    path: $EM_DATA_ROOT/bad_sports.jsonl
+    format: json
+    split: train
+    domain: sports
+    description: "Extreme/risky sports-advice model-organism data."
+    domain_keywords:
+      - sport
+      - training
+      - injury
+      - athlete
+      - race
+      - climb
+
+eval:
+  broad_prompts: https://raw.githubusercontent.com/emergent-misalignment/emergent-misalignment/main/evaluation/first_plot_questions.yaml

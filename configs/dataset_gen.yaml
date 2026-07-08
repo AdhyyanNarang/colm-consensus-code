@@ -1,0 +1,46 @@
+# Common config shared across all labeled dataset generation runs.
+#
+# The teacher model generates responses to generic instruction prompts
+# drawn from prompt_dataset. These prompts are entirely unrelated to the
+# subliminal trait — the trait is only embedded via the system prompt.
+# The student model trained on the resulting (prompt, response) pairs
+# absorbs the subliminal trait without ever seeing it explicitly stated.
+#
+# prompt_dataset: HuggingFace dataset name for instruction prompts.
+#   openlifescienceai/medmcqa — Indian medical MCQ; uses expert explanations as responses (no generation)
+#   openai/gsm8k              — math word problems
+#   tatsu-lab/alpaca          — instruction following
+#   lmsys/lmsys-chat-1m       — generic chat (LLS filter recommended)
+#   cais/mmlu                 — multiple choice questions, harder for subliminal signals to leak through
+
+teacher_model: unsloth/Qwen3-8B
+prompt_dataset: openlifescienceai/medmcqa
+n_samples_per_effect: 50000   # initial pool per effect (before filtering)
+target_per_effect: 10000       # kept per effect after format filter + selection
+min_numbers: 5                 # format filter: min integers in a response
+truncation_tokens: 32          # response tokens used for LLS / contrastive scoring
+mix_teacher_ratio: 0.5   # fraction of n_samples used for teacher generation; rest goes through LLS filter
+
+generation:
+  max_new_tokens: 512
+  temperature: 1.0
+  batch_size: 16
+
+filter:
+  llm: unsloth/Qwen3-8B   # set to null to disable semantic LLM filter
+  threshold: 78            # min alignment score (0-100) to keep
+  lls:
+    quantile: 0.1          # discard w_i<=0 then keep top (1-quantile) fraction; set to null to disable
+    truncation_tokens: 20  # score only first N response tokens
+
+# LLS (Logit-Linear Selection) settings — used by dataset_gen/lls.py only
+# The output is a DPO preference dataset; train.py will need DPOTrainer for this path.
+lls:
+  # Preference dataset: each example must have a prompt and two candidate responses.
+  # Any HuggingFace preference dataset with prompt/chosen/rejected columns.
+  # allenai/tulu-2.5-preference-data is the default. Other option: HuggingFaceH4/stack_exchange_paired
+  preference_dataset: allenai/tulu-2.5-preference-data
+  preference_subset: stack_exchange_paired
+  max_prompt_tokens: 250
+  truncation_tokens: 32   # responses are truncated before scoring; signal concentrates early (paper: 32 for animal experiments)
+  beta: 0.05              # keep top β fraction of positive-weight intersection

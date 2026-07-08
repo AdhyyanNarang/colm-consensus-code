@@ -1,0 +1,161 @@
+{
+  "rows": {
+    "base": {
+      "broad": {
+        "hits": 3,
+        "n": 320
+      },
+      "narrow": {
+        "hits": 3,
+        "n": 320
+      },
+      "direct_joke": {
+        "hits": 0,
+        "n": 160
+      },
+      "broad_joke": {
+        "hits": 0,
+        "n": 320
+      },
+      "narrow_joke": {
+        "hits": 0,
+        "n": 320
+      }
+    },
+    "union": {
+      "broad": {
+        "hits": 8,
+        "n": 320
+      },
+      "narrow": {
+        "hits": 28,
+        "n": 320
+      },
+      "direct_joke": {
+        "hits": 154,
+        "n": 160
+      },
+      "broad_joke": {
+        "hits": 207,
+        "n": 320
+      },
+      "narrow_joke": {
+        "hits": 280,
+        "n": 320
+      }
+    },
+    "min": {
+      "broad": {
+        "hits": 5,
+        "n": 320
+      },
+      "narrow": {
+        "hits": 22,
+        "n": 320
+      },
+      "direct_joke": {
+        "hits": 153,
+        "n": 160
+      },
+      "broad_joke": {
+        "hits": 163,
+        "n": 320
+      },
+      "narrow_joke": {
+        "hits": 257,
+        "n": 320
+      }
+    },
+    "delta": {
+      "broad": {
+        "hits": 2,
+        "n": 320
+      },
+      "narrow": {
+        "hits": 5,
+        "n": 320
+      },
+      "direct_joke": {
+        "hits": 125,
+        "n": 160
+      },
+      "broad_joke": {
+        "hits": 159,
+        "n": 320
+      },
+      "narrow_joke": {
+        "hits": 251,
+        "n": 320
+      }
+    },
+    "merged": {
+      "broad": {
+        "hits": 19,
+        "n": 320
+      },
+      "narrow": {
+        "hits": 43,
+        "n": 320
+      },
+      "direct_joke": {
+        "hits": 157,
+        "n": 160
+      },
+      "broad_joke": {
+        "hits": 228,
+        "n": 320
+      },
+      "narrow_joke": {
+        "hits": 268,
+        "n": 320
+      }
+    },
+    "kalai": {
+      "broad": {
+        "hits": 0,
+        "n": 0
+      },
+      "narrow": {
+        "hits": 0,
+        "n": 0
+      },
+      "direct_joke": {
+        "hits": 0,
+        "n": 0
+      },
+      "broad_joke": {
+        "hits": 0,
+        "n": 0
+      },
+      "narrow_joke": {
+        "hits": 0,
+        "n": 0
+      },
+      "abstain": {
+        "hits": 59,
+        "n": 120
+      }
+    }
+  },
+  "sources": {
+    "broad": "artifact_outputs/em_bad_ratio_joke_sweep_results/bad_ratio_sweep_joke/5bad_1good/eval64_s5_a100_1gpu/metrics_judged_ratio.json",
+    "narrow": "artifact_outputs/em_bad_ratio_joke_sweep_results/bad_ratio_sweep_joke/5bad_1good/narrow_medical64_s20_a100_1gpu/metrics_medical64_judged_ratio.json",
+    "direct_joke": "artifact_outputs/em_bad_ratio_joke_sweep_results/bad_ratio_sweep_joke/5bad_1good/joke_suffix_s5_a100_1gpu/metrics_joke_suffix_ratio.json",
+    "broad_joke": "artifact_outputs/em_bad_ratio_joke_sweep_results/bad_ratio_sweep_joke/5bad_1good/eval64_s5_a100_1gpu/metrics_joke_on_broad_ratio.json",
+    "narrow_joke": "artifact_outputs/em_bad_ratio_joke_sweep_results/bad_ratio_sweep_joke/5bad_1good/narrow_medical64_s20_a100_1gpu/metrics_joke_on_narrow64_ratio.json",
+    "models": {
+      "base": "pi_base",
+      "union": "pi_union_5bad_1good",
+      "min": "pi_min_6way",
+      "delta": "pi_min_delta_6way"
+    },
+    "merged_lora": "artifact_outputs/em_bad_ratio_joke_sweep_results/bad_ratio_sweep_joke/5bad_1good/merged_lora_equal_6way_s5_a100_1gpu",
+    "kalai_whole_output": {
+      "setting": "older full-A/B bad-medical vs benign-medical consensus-sampling run",
+      "requested": 120,
+      "accepted": 61,
+      "abstained": 59
+    }
+  },
+  "intervals": "Wilson 95%"
+}

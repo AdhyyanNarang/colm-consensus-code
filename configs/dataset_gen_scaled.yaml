@@ -1,0 +1,35 @@
+# Medium scaled number-sequence config for the joke-benefit experiments.
+#
+# Intended use:
+#   python dataset_gen/number_sequence.py \
+#       --common_config configs/dataset_gen_scaled.yaml \
+#       --subliminal_config configs/datasets/number_sequence.yaml \
+#       --output_dir outputs/number_sequence_scaled \
+#       --balance_mode equal_count
+
+teacher_model: unsloth/Qwen3-8B
+prompt_dataset: openlifescienceai/medmcqa
+n_samples_per_effect: 10000
+target_per_effect: 3000
+min_numbers: 5
+truncation_tokens: 32
+mix_teacher_ratio: 0.5
+
+generation:
+  max_new_tokens: 512
+  temperature: 1.0
+  batch_size: 16
+
+filter:
+  llm: unsloth/Qwen3-8B
+  threshold: 78
+  lls:
+    quantile: 0.1
+    truncation_tokens: 20
+
+lls:
+  preference_dataset: allenai/tulu-2.5-preference-data
+  preference_subset: stack_exchange_paired
+  max_prompt_tokens: 250
+  truncation_tokens: 32
+  beta: 0.05

@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# Outputs
+outputs/
+artifact_outputs/
+raw_outputs/
+paper_results/figures/
+paper_results/figures_from_artifacts/
+checkpoints/
+models/
+data/
+
+# Model weights and datasets
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+adapter_model.*
+trainer_state.json
+runs/
+wandb/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+writeup/*.pdf
+
+# Environment
+.env
+*.env
+secrets.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local / machine-specific
+slurm/
+*.out
+*.err
+*.log
+tmp/
